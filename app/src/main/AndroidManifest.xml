@@ -19,5 +19,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.NewWordActivity"></activity>
+        <activity android:name=".view.UpdateWordActivity"></activity>
     </application>
 </manifest>

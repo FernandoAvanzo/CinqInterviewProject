@@ -9,11 +9,62 @@
         tools:context="cinq.interview.project.view.MainActivity"
         tools:showIn="@layout/activity_main">
 
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerview"
+    <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@android:color/darker_gray"
-            tools:listitem="@layout/recyclerview_item"/>
+            android:background="@android:color/black">
+        <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
 
+            <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Registros"
+                    android:layout_gravity="left"
+                    android:background="#8800FF00"/>
+
+            <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:background="#88FF0000"/>
+
+            <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Tempo"
+                    android:layout_gravity="right"
+                    android:background="#8800FF00"/>
+
+            <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_gravity="left"
+                    android:background="#88FF0000"/>
+
+        </LinearLayout>
+    </FrameLayout>
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:layout_marginTop="22dp">
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray"
+                tools:listitem="@layout/recyclerview_item"/>
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

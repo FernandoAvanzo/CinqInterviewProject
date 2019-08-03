@@ -1,10 +1,12 @@
 package cinq.interview.project.view
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import cinq.interview.project.R
 import cinq.interview.project.model.Word
@@ -21,6 +23,15 @@ class WordListAdapter internal constructor(context: Context)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
         val itemView = inflater.inflate(R.layout.recyclerview_item, parent, false)
+
+        itemView.setOnClickListener {
+            val intent = Intent(inflater.context, UpdateWordActivity::class.java)
+            val value: TextView =   it.findViewById(R.id.textView)
+            intent.putExtra(UpdateWordActivity.EXTRA_UPDATE, value.text.toString())
+            val context : MainActivity = inflater.context as MainActivity
+            context.startActivityForResult (intent, MainActivity.updateWordActivityRequestCode)
+        }
+
         return WordViewHolder(itemView)
     }
 
